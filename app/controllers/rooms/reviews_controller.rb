@@ -6,8 +6,7 @@ class Rooms::ReviewsController < ApplicationController
 			find_or_initialize_by(user_id: current_user.id)
 			
 		review.update!(review_params)
-
-		head: ok
+		head :ok
 	end
 
 	def update
