@@ -14,15 +14,13 @@ Funcionalidades
 
 Atualmente as funcionalidades existentes incluem:
 	
-	´´´Basicas
-	
 	1. Login do usuario, com confirmação por email(token)
 	2. CRUD dos quartos(rooms)
 	3. Edição do perfil
 	4. Requerimento de autenticação em algumas paginas.
 	5. RESTFull
 	6. Internacionalizado com I18n-rails
-	* E outras 'coisitas mas'...
+	`* E outras 'coisitas mas'...`
 
 Capa do Livro (Casa do Código)
 -----------------------------
@@ -30,10 +28,8 @@ Capa do Livro (Casa do Código)
 
 Consideração Final
 -----------------
-Realmente um livro/ebook fantástico, é para tanto que peço que ´´´fork meu projeto e veja como é simples rodar uma aplicação utilizando Rails.
+Realmente um livro/ebook fantástico, é para tanto que peço que `fork` meu projeto e veja como é simples rodar uma aplicação utilizando Rails.
 
 Na verdade,compre o livro e estude o Framework Rails 4.
+
 Sem mais :)
-
-
-
