@@ -3,4 +3,4 @@
 	<span class="btn btn-alert btn-small"><%= recent_rooms %></span>
 </h1>
 
-<%= render @rooms %>
+<%= render partial: "rooms/room", collection: @rooms %>

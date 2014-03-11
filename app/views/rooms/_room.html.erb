@@ -1,7 +1,7 @@
 <article class="room">
   <h2><%= link_to room.title, room.route %> </h2>
 
-  <%= render partial: 'review', locals: {room: room} %>
+  <%= render partial: "rooms/review", locals: {room: room} %>
 
   <span class="created">
     <%= t '.owner', 
