@@ -1,0 +1,5 @@
+<li class="brand-user"><%= "Olá, #{current_user.full_name}!" %></li>
+<li><%= link_to t('layouts.new_room'), new_room_path %></li>
+<li><%= link_to t('layouts.rooms', total_rooms: total_rooms), rooms_path %></li>
+<li><%= link_to t('layouts.my_profile'), user_path(current_user) %></li>
+<li><%= link_to t('layouts.signout'), user_sessions_path, method: :delete %></li>

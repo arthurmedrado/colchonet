@@ -1,0 +1,316 @@
+//--------------------------------------------------------------
+// library imports....
+@import '_colors';
+@import '_buttons';
+@import '_mixins';
+
+//--------------------------------------------------------------
+
+//--------------------------------------------------------------
+// Variaveis do template
+//--------------------------------------------------------------
+$header-height: 55px;
+$content-width: 100% - 5%;
+$serif-families: "Pacifico","Georgia", serif;
+$sans-serif-families: "Helvetica", sans-serif;
+
+//------------------------------------------------------------
+// Fim das @mixin
+//------------------------------------------------------------
+
+*{
+	font-size: 14px;
+	font-family: $sans-serif-families !important;
+	margin: 0;
+  padding: 0;
+  text-decoration: none
+}
+
+li{
+  list-style: none;
+}
+
+//define qual sera o fundo do site
+body{
+	background: #f1f1f1;
+}
+
+header{
+	height: $header-height;
+	background: $navbar-color;
+	border-bottom: 1px solid #686;
+	//margin-bottom: 15px;
+
+	@include shadow(#ccc, 0, 3px, 6px);
+
+	.header-wrap{
+		width: $content-width;
+		margin: 0 auto;
+
+		h1{
+			float: left;
+			margin-top: 7px;
+
+			a{
+				color: #fff;
+				font-family: $serif-families !important;
+				font-weight: 400;
+				font-size: 1.3em;
+				@include transition(all, .1s);
+			}
+		}
+	}
+
+	& nav{
+		float: right;
+
+		ul{
+			display: inline-block;
+			vertical-align: middle;
+			line-height: 55px;
+
+			li{
+				display: inline-block;
+				line-height: 24px;
+				background: darken($navbar-color, 10%);
+				padding: 3px 10px;
+				color: white;
+				@include border(5px);
+				@include transition(background, .2s);
+
+				&:hover,
+				&:active,
+				&:focus{
+					background: darken($navbar-color, 20%);
+					@include transition(background, .2s);
+				}
+
+				&.brand-user{
+					background-color: transparent;
+					//margin-right: 30px;
+				}
+
+				a{
+					display: block;
+					font-size: 12px;
+					font-weight: 600;
+					color: #fff;
+
+					&.active{
+						background-color: $success-text-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+.clear{
+	clear: both;
+	display: block;
+	height: 20px;
+	margin-bottom: 10px;
+}
+
+//Conteudo principal do site, onde tudo é carregado
+.content{
+	position: relative;
+	width: $content-width;
+	min-height: 600px;
+	margin: 0 auto;
+	text-align: left;
+		
+	& + h1.first-child{
+		border: 1px solid #000
+	}
+
+	h1.title{
+		font-size: 1.5em;
+		color: $navbar-color;
+	}
+
+	a,
+	a:visited,
+	a:hover{
+		color: #333;
+		
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+	ul,
+	form,
+	p{
+		margin: 10px 0;
+	}
+
+	.container{
+		width: $content_width;
+		float: left;
+	}
+
+	.content_login{
+		width: 295px;
+		margin: 0 auto;
+		margin-top: 30px;
+
+		h1{
+			text-align:center;
+		}
+
+		form{
+			width: 300px;
+			margin: 0 auto;
+
+			label{
+				color: $navbar-color;
+			}
+
+			input[type="submit"]{
+				width: 100%;
+			}
+
+			.pull-right{
+				text-align: right;
+				//float: right;
+				margin-top: 10px;
+				//margin-left: 10px;
+				font-size: 11px;
+				color: $success-text-color;
+			}
+		}
+	}
+
+	.footer{
+		margin: 0 auto;
+		width: $content-width;
+		padding:20px 0;
+		float: left;
+		//position: relative;
+		//bottom: 10px;
+
+		.nav-footer{
+			float: left;
+			width: 100%;
+			li{
+				display: inline-block;
+				float: left;
+				margin-right: 10px;
+
+				a{
+					float: left;
+					display: inline-block;
+					font-size:13px;
+					font-family: $sans-serif-families;
+					color: $navbar-color;
+
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+
+			}
+		}
+	}
+}
+
+:focus {
+	outline: -webkit-focus-ring-color auto 0px;
+	outline-color: transparent;
+	outline-style: auto;
+	outline-width: 1px;
+}
+
+//Estilos dos formularios
+form{
+	label{
+		display: block;
+		margin: 5px 0;
+		color: #444;
+	}
+
+	input[type=text],
+	input[type=password],
+	textarea{
+		width: 96.5%;
+		padding: 10px 8px;
+		padding-right: 0px;
+		border: 1px solid #ccc;
+		@include border(3px);
+		//@include shadow(inset rgba(0,0,0,.15),0,2px,0px);
+		@include border-width(0px 1px 4px 1px);
+		color: #888;
+		font-size: 17px;
+		font-family: $sans-serif-families;
+	}
+
+	textarea{
+		padding: 8px;
+		width: 95.5%;
+		height: 200px;
+	}
+}
+
+.field_with_errors {
+	display: inline;
+	label { color: $error-text-color; }
+
+	input[type=text], 
+	input[type=password], 
+	textarea {
+		border: 1px solid rgba(189,74,72, 0.5);
+		@include border-width(0px 0px 4px 0px);
+		@include shadow(rgba(189,74,72, 0.2), 0px, 0px, 8px);
+		
+		&:focus { 
+			border: 1px solid rgba(189,74,72, 0.6); 
+			@include border-width(3px 0px 0px 0px);
+			@include transition(all,.1s);
+		}
+	}
+}
+
+.error_message {
+	width: 95.5%;
+	background: #F2DEDE;
+	display: block;
+	padding: 5px 10px;
+	font-size: 12px;
+	color: $error-text-color;
+}
+
+.padded_flash {
+	display: block;
+	padding: 10px 0px;
+}
+
+.content_notice{
+	display: block;
+	float: left;
+	margin: -15px 0 25px 0;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+	@include border(3px);
+	@include transition();
+
+
+	& #alert {
+		color: $error-text-color;
+		background-color: #F2DEDE;
+		@extend .padded_flash;
+	}
+
+	& #notice {
+		color: $success-text-color;
+		background-color: #DFF0D8;
+		@extend .padded_flash;
+	}
+
+	#error_explanation {
+		color: $error-text-color;
+		background-color: #F2DEDE;
+		@extend .padded_flash;
+	}
+}

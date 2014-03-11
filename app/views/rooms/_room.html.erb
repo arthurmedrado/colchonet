@@ -1,0 +1,31 @@
+<article class="room">
+  <h2><%= link_to room.title, room.route %> </h2>
+
+  <%= render partial: 'rooms/review', locals: {:room => room} %>
+
+  <span class="created">
+    <%= t '.owner', 
+        owner: room.user.full_name,
+        when: l(room.created_at, format: :short)
+    %>
+  </span>
+  <p>
+    <span class="location">
+      <%= link_to "#{room.location} - #{room.state}",
+                  "https://maps.google.com/?q=#{room.location} #{room.state}" %>
+    </span>
+  </p>
+
+  <p><%= room.description %></p>
+  <% if belongs_to_user(room) %>
+  
+    <ul class="nav-opts">
+      <li><%= link_to t('.edit'), edit_room_path(room), class: 'btn btn-success btn-small' %></li>
+      <li><%= link_to t('.destroy'), room_path(room), 
+                                      method: :delete, 
+                                      data: {confirm: t('dialogs.destroy')}, 
+                                      class: 'btn btn-alert btn-small' %>
+      </li>
+    </ul>
+  <% end %>
+</article>

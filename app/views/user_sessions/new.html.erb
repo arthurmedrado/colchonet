@@ -1,0 +1,30 @@
+<div class="content_login">
+	<% if @user_session.errors.has_key? :base %>
+		<div class="content_notice">
+			<div id="error_explanation">
+				<%= @user_session.errors[:base].join(', ') %>
+			</div>
+		</div>
+	<% end %>
+
+	<h1 class="title"><%= t '.title' %></h1>
+
+	<%= form_for @user_session do |f| %>
+		<p>
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+			<%= error_tag @user_session, :email %>
+		</p>
+
+		<p>
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+			<%= error_tag @user_session, :password %>
+		</p>
+
+		<p>
+			<%= f.submit class: 'btn btn-success btn-block' %>
+			<%= link_to "Recuperar Senha", root_path, class: 'pull-right' %>
+		</p>
+	<% end %>
+</div>

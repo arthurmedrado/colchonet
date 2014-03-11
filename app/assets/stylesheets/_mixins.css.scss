@@ -1,0 +1,39 @@
+//-------------------------------------------------------------
+//@mixin ou funcoes do template
+//-------------------------------------------------------------
+@mixin shadow($color, $x, $y, $radius){
+	box-shadow: $color $x $y $radius;
+		-moz-box-shadow: $color $x $y $radius;
+		-webkit-box-shadow: $color $x $y $radius;
+		-o-box-shadow: $color $x $y $radius;
+}
+
+@mixin border($radius){
+	border-radius: $radius;
+		-moz-border-radius: $radius;
+		-webkit-border-radius: $radius;
+		-o-border-radius: $radius;
+		-ms-border-radius: $radius;
+}
+
+@mixin transition($type: all, $time: .2s, $dir: ease-in){
+	transition: $type $time $dir;
+		-webkit-transition: $type $time $dir;
+		-moz-transition: $type $time $dir;
+		-o-transition: $type $time $dir;
+		-ms-transition: $type $time $dir;
+}
+
+@mixin button-hover($color){
+	@include transition(all, .2s);
+	@include shadow(darken($color, 3%), 0px, 0px, 5px );
+	background-image: linear-gradient(to bottom, $color, darken($color, 5));
+	background-image: -webkit-linear-gradient(to bottom, $color, darken($color, 5%));
+	background-image: -moz-linear-gradient(to bottom, $color, darken($color, 5%));
+	background-image: -o-linear-gradient(to bottom, $color, darken($color, 5%));
+	background-image: -ms-linear-gradient(to bottom, $color, darken($color, 5%));
+}
+
+@mixin border-width($params) {
+	border-width: $params;
+}

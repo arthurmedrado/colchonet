@@ -1,0 +1,90 @@
+//-------------------------------------------------------------
+//@mixin ou funcoes do template
+//-------------------------------------------------------------
+@import '_mixins';
+@import '_colors';
+
+.btn{
+	padding: 7px 10px;
+	margin: 3px 0px;
+	font-size: 13px;
+	color: $inverse-color;
+	background: $default-color;
+	@include border(3px);
+	@include transition(all, .2s);
+	@include border-width(0px 1px 4px 1px);
+	
+	&.btn-default{
+		border: 5px solid darken($default-color, 10%);
+		@include border-width(0px 1px 4px 1px);
+		background: $default-color;
+		color: $inverse-color;
+		@include shadow($default-color, 0px, 0px, 3px );
+
+		&:hover{
+			@include transition(all, .2s);
+			@include button-hover($default-color);
+		}
+	}
+
+	&.btn-inverse{
+		border: 1px solid darken($inverse-color, 10%);
+		@include border-width(0px 1px 4px 1px);
+		background: $inverse-color;
+		color: $default-color !important;
+		@include shadow($inverse-color, 0px, 0px, 3px );
+
+		&:hover{
+			@include transition(all, .2s);
+			@include button-hover($inverse-color);
+		}
+	}
+
+	&.btn-alert{
+		border: 1px solid darken($alert-color,10%);
+		@include border-width(0px 1px 4px 1px);
+		background: $alert-color;
+		color: $default-color !important;
+		@include shadow($alert-color, 0px, 0px, 3px );
+
+		&:hover{
+			@include transition(all, .2s);
+			@include button-hover($alert-color);
+		}
+	}
+
+	&.btn-info{
+		border:1px solid darken($info-color, 10%);
+		@include border-width(0px 1px 4px 1px);
+		background: $info-color;
+		color: $default-color !important;
+		@include shadow($info-color, 0px, 0px, 3px );
+
+		&:hover{
+			@include transition(all, .2s);
+			@include button-hover($info-color);
+		}
+	}
+
+	&.btn-success{
+		border: 1px solid darken($success-color, 10%);
+		@include border-width(0px 1px 4px 1px);
+		background: $success-color;
+		color: $default-color !important;
+		@include shadow($success-color, 0px, 0px, 3px );
+
+		&:hover{
+			@include transition(all, .2s);
+			@include button-hover($success-color);
+		}
+	}
+
+	&.btn-small{
+		padding: 5px 8px;
+		font-size: 10px;
+	}
+
+	&.btn-block{
+		width: 100%;
+	}
+}

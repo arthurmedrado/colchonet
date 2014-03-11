@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> -->
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<!-- JS -->
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<!-- CSRF -->
+	<%= csrf_meta_tags %>
+	<!-- Title -->
+	<title>Colchonet</title>
+</head>
+<body>
+	<header>
+		<div class="header-wrap">
+			<h1 class="logo"><%= link_to "colcho", root_path %></h1>
+
+			<nav class="nav nav-default">
+				<ul>
+					<% if user_signed_in? %>
+						<%= render 'layouts/user_navbar' %>
+					<% else %>
+						<%= render 'layouts/visitor_navbar' %>
+					<% end %>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	
+		<% if notice.present? %>
+			<div class="content_notice">
+				<span id="notice" class=""><%= notice %></span>
+			</div>
+		<% end %>
+
+		<% if alert.present? %>
+			<div class="content_notice">
+				<span id="alert" class=""><%= alert %></span>
+			</div>
+		<% end %>
+		
+	<div class="content">
+		<div class="container">
+			<%= yield %>
+		</div>
+
+		<div class="clear"></div>
+		
+		<div class="footer">
+			<ul class="nav-footer">
+				<li><%= link_to "Home", root_path %></li>
+				<li><%= link_to "Cadastre-se", new_user_path %></li>
+				<li><%= link_to "Login", new_user_sessions_path %></li>
+				<li><%= link_to "Politica de Privacidade", '#' %></li>
+				<li><%= link_to "Contato", '#' %></li>
+			</ul>
+		</div>
+	</div>	
+
+</body>
+</html>

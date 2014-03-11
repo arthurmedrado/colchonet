@@ -1,0 +1,33 @@
+<%= form_for(@room) do |f| %>
+  <% if @room.errors.any? %>
+    <div class="content_notice">
+      <div id="error_explanation" class="shadow">
+        <h2>Há erros no formulario, por favor verifique.</h2>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= error_tag @room, :title %>
+  </div>
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+    <%= error_tag @room, :state %>
+  </div>
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+    <%= error_tag @room, :location %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <%= error_tag @room, :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: 'btn btn-success' %>
+  </div>
+<% end %>

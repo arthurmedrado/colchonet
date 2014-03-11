@@ -1,0 +1,57 @@
+@import '_colors';
+@import '_mixins';
+@import '_buttons';
+
+.room{
+	background: #fff;
+	padding: 10px 25px;
+	margin-bottom: 20px;
+
+	@include shadow(#ccc, 0, 3px, 6px);
+
+	h2{
+		display: inline;
+		margin-right: 5px;
+
+		a{ 
+			font-size: 1.3em; 
+			color: $navbar-color !important;
+		}
+	}
+
+	.review{
+		float: right;
+
+		label{
+			display: inline;
+		}
+	}
+
+	.created{
+		color: $error-text-color;
+		opacity: .5;
+	}
+
+	.location{
+		a{
+			color: $navbar-color !important;
+			font-size: .95em;
+		}
+	}
+
+	.nav-opts{
+		display: block;
+
+		li{
+			display: inline;
+			margin-right: 5px;
+
+			a{
+				float: left;
+				margin-right: 5px;
+				padding: 0 5px;
+			}
+		}
+	}
+}
+
