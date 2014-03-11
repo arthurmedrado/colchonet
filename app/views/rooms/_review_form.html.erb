@@ -1,0 +1,12 @@
+<% if room.can_review? %>
+	<%= form_for room.review_route do |f| %>
+			<% room.review_points.each do |point| %>
+				<%= f.radio_button :points, point %>
+				<%= f.label :points, point, value: point %>
+			<% end %>
+		<%= f.submit %>
+	<% end %>
+<% else %>
+  <%= link_to t('.login_to_review'), new_user_sessions_path ,
+              :class => 'login_required btn btn-success btn-small' %>
+<% end %>

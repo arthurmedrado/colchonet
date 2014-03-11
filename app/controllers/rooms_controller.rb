@@ -7,8 +7,8 @@ class RoomsController < ApplicationController
     # contendo o resultado do bloco. Dessa forma, para cada
     # quarto, retornaremos o presenter equivalente.
     @rooms = Room.most_recent.map do |room|
-    # Não exibiremos o formulário na listagem
-    RoomPresenter.new(room, self, false)
+      # Não exibiremos o formulário na listagem
+      RoomPresenter.new(room, self, false)
     end
   end
 
