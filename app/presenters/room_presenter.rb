@@ -33,6 +33,16 @@ class RoomPresenter
     Review::POINTS
   end
 
+  def stars
+    #calcula a media e arrendonda dos reviews sobre o model
+    @room.reviews.stars
+  end
+
+  def total_reviews
+    # calcula o total de reviews para o model
+    @room.reviews.size
+  end
+
   def to_partial_path
     'room'
   end

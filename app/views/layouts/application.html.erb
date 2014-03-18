@@ -8,12 +8,12 @@
 	<!-- CSRF -->
 	<%= csrf_meta_tags %>
 	<!-- Title -->
-	<title>Colchonet</title>
+	<title>Colcho.net | <%= yield(:title) %></title>
 </head>
 <body>
 	<header>
 		<div class="header-wrap">
-			<h1 class="logo"><%= link_to "colcho", root_path %></h1>
+			<h1 class="logo"><%= link_to fa_icon('star', text: 'colcho', class: 'fa-1x fa-fw pull-left'), root_path %></h1>
 
 			<nav class="nav nav-default">
 				<ul>
@@ -38,7 +38,7 @@
 				<span id="alert" class=""><%= alert %></span>
 			</div>
 		<% end %>
-		
+
 	<div class="content">
 		<div class="container">
 			<%= yield %>

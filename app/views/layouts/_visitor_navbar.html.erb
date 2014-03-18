@@ -1,3 +1,3 @@
-<li><%= link_to t('layouts.rooms', total_rooms: total_rooms), rooms_path %></li>
-<li><%= link_to t('layouts.signup'), new_user_path %> </li>
-<li><%= link_to t('layouts.signin'), new_user_sessions_path %> </li>
+<li><%= link_to fa_icon('group', text: t('layouts.rooms', total_rooms: total_rooms)), rooms_path %></li>
+<li><%= link_to fa_icon('clipboard', text: t('layouts.signup')), new_user_path %> </li>
+<li><%= link_to fa_icon('sign-in', text: t('layouts.signin')), new_user_sessions_path %> </li>

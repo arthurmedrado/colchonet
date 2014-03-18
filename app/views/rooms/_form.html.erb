@@ -1,3 +1,5 @@
+<% provide(:title, "Editar #{@room.title} - #{@room.user.full_name} #{@room.location}") %>
+
 <%= form_for(@room) do |f| %>
   <% if @room.errors.any? %>
     <div class="content_notice">

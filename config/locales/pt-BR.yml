@@ -243,6 +243,10 @@ pt-BR:
       login_to_review: 'Faça o login'
     review:
       login_to_review: 'Faça o login'
+      stats:
+        zero: 'Não há avaliações'
+        one: '%{average}/%{max} (1 avaliação)'
+        other: '%{average}/%{max} (%{count} avaliações)'
     my_rooms: 
       title: 'Meus Quartos'
 
@@ -252,7 +256,7 @@ pt-BR:
  
   # layouts
   layouts:
-    signup: Cadastro
+    signup: 'Cadastro'
     signin: Login
     rooms: 'Quartos (%{total_rooms})'
     new_room: Novo Quarto

@@ -1,6 +1,6 @@
-<li class="brand-user"><%= "Olá, #{current_user.full_name}!" %></li>
-<li><%= link_to t('layouts.new_room'), new_room_path %></li>
-<li><%= link_to t('layouts.rooms', total_rooms: total_rooms), rooms_path %></li>
-<li><%= link_to t('layouts.my_profile'), user_path(current_user) %></li>
-<li><%= link_to t('layouts.my_rooms', my_rooms: total_user_rooms), user_rooms_path(current_user) %></li>
-<li><%= link_to t('layouts.signout'), user_sessions_path, method: :delete %></li>
+<li class="brand-user"><%= fa_icon('meh-o', text: "#{current_user.full_name}!") %></li>
+<li><%= link_to fa_icon('plus-square', text: t('layouts.new_room')), new_room_path %></li>
+<li><%= link_to fa_icon('tags', text: t('layouts.rooms', total_rooms: total_rooms)), rooms_path %></li>
+<li><%= link_to fa_icon('user', text: t('layouts.my_profile')), user_path(current_user) %></li>
+<li><%= link_to fa_icon('tag', text: t('layouts.my_rooms', my_rooms: total_user_rooms)), user_rooms_path(current_user) %></li>
+<li><%= link_to fa_icon('sign-out', text: t('layouts.signout')), user_sessions_path, method: :delete %></li>
