@@ -243,7 +243,9 @@ pt-BR:
       login_to_review: 'Faça o login'
     review:
       login_to_review: 'Faça o login'
- 
+    my_rooms: 
+      title: 'Meus Quartos'
+
  # links
   links:
     back: Voltar
@@ -255,6 +257,7 @@ pt-BR:
     rooms: 'Quartos (%{total_rooms})'
     new_room: Novo Quarto
     my_profile: Meu Perfil
+    my_rooms: 'Meus Quartos (%{my_rooms})'
     signout: Logout
   
   # general

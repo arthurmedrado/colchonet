@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 	delegate :current_user, :user_signed_in?, to: :user_session
 
 	# transforma os metodos em helpers
-	helper_method :current_user, :user_signed_in?, :recent_rooms, :total_rooms
+	helper_method :current_user, :user_signed_in?, :recent_rooms, :total_rooms, :total_user_rooms
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -50,5 +50,9 @@ class ApplicationController < ActionController::Base
 
   def total_rooms
     Room.count
+  end
+
+  def total_user_rooms
+    current_user.rooms.count
   end
 end

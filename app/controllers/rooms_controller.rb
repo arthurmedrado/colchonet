@@ -47,9 +47,14 @@ class RoomsController < ApplicationController
   end
 
   def destroy
-    #@room = current_user.rooms.find(params[:id])
     @room.destroy
     redirect_to rooms_url
+  end
+
+  def my_rooms
+    @my_rooms = current_user.rooms.most_recent.map do |room|
+      RoomPresenter.new(room, self, true)
+    end
   end
 
   private
