@@ -10,7 +10,7 @@
 
 	<h1 class="title"><%= t '.title' %></h1>
 
-	<%= form_for @user_session do |f| %>
+	<%= form_for @user_session, remote: true do |f| %>
 		<p>
 			<%= f.label :email %>
 			<%= f.text_field :email %>

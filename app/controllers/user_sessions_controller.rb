@@ -10,10 +10,16 @@ class UserSessionsController < ApplicationController
 		@user_session = UserSession.new(session, params[:user_session])
 
 		if @user_session.authenticate!
-			redirect_to root_path, notice: t('flash.notice.signed_in')
+			head :ok
 		else
-			render :new
+			head :error
 		end
+
+		# if @user_session.authenticate!
+		# 	redirect_to root_path, notice: t('flash.notice.signed_in')
+		# else
+		# 	render :new
+		# end
 	end
 	
 	def destroy
