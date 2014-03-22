@@ -245,8 +245,8 @@ pt-BR:
       login_to_review: 'Faça o login'
       stats:
         zero: 'Não há avaliações'
-        one: '%{average}/%{max} (1 avaliação)'
-        other: '%{average}/%{max} (%{count} avaliações)'
+        one: '(1 avaliação)'
+        other: '(%{count} avaliações)'
     my_rooms: 
       title: 'Meus Quartos'
 

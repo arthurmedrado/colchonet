@@ -23,4 +23,33 @@ $(function(){
 									css('color', color));
 	};
 
+	/**
+	 * Mudar a cor das estrelas nos reviews
+	 * @param  {[type]} elem alvo
+	 * @return {[type]}      mudar a cor
+	 */
+	function highlightStars(elem){
+		elem.parent().children('label').removeClass('toggled');
+		elem.addClass('toggled').prevAll('label').addClass('toggled');
+	};
+
+	highlightStars($('.review input:checked + label'))
+
+	var $stars = $('.review input:enabled ~ label');
+
+	$stars.on({
+		mouseenter: function(){
+			highlightStars($(this));
+		},
+
+		mouseleave: function(){
+			highlightStars($('.review input:checked + label'));
+		}
+	});
+
+	$('.review input').on('change', function() {
+		$stars.off('mouseenter').off('mouseleave').off('click').off('touch');
+		$(this).parent('form').submit();
+	});
+
 });
