@@ -32,6 +32,13 @@ $(function(){
 		$form.find('input:submit').attr('value','Redirecionando..');
 		window.location = '/rooms';
 	});
+
+
+	//Fechar a busca
+	$('.fechar-busca').on('click touch', function(){
+		$(this).fadeOut();
+		$('.bloco-busca').slideUp('1000');
+	});
 });
 
 /**

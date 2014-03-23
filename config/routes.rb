@@ -7,7 +7,7 @@ Colchonet::Application.routes.draw do
     end
 
     resources :users do
-      get '/rooms' => 'rooms#my_rooms'
+      get '/my_rooms' => 'rooms#my_rooms'
     end
     
     resource :confirmation, only: [:show]
@@ -15,6 +15,7 @@ Colchonet::Application.routes.draw do
   end
 
   get '/:locale' => 'home#index', locale: LOCALES
+  #get '/:locale/my_rooms' => 'rooms#my_rooms', locale: LOCALES
 
   root 'home#index'
 

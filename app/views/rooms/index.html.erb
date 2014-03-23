@@ -1,7 +1,19 @@
 <% provide(:title, 'Quartos Disponiveis') %>
-<h1 class="title">
-	<%= t ('.title') %>
-	<span class="btn btn-alert btn-small"><%= total_rooms %></span>
-</h1>
+
+<%= render 'home/search' %>
+
+<% if @search_query.present? %>
+	<h1 class="btn btn-small btn-alert">
+		<%= t '.search_results' %>
+		<%= "( #{@count_rooms_search} )" %>
+	</h1>
+<% else %>
+	<h1 class="title">
+		<%= t ('.title') %>
+		<span class="btn btn-alert btn-small"><%= total_rooms %></span>
+	</h1>
+<% end %>
+
+<br>
 
 <%= render @rooms %>

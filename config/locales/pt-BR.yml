@@ -210,7 +210,10 @@ pt-BR:
 # Tradução manual do template
 # 
 ###############################################################################
-  
+  #home
+  home:
+    search:
+      search_for: 'Pesquise seu quarto..'
   # usuarios
   users:
     index:
@@ -229,6 +232,7 @@ pt-BR:
   rooms:
     index:
       title: Quartos disponíveis
+      search_results: 'Resultados da Busca'
     new:
       title: Adicionar Quarto
     edit: 
@@ -295,6 +299,7 @@ pt-BR:
     alert:
       needs_login: "Você precisa estar logado para continuar"
       room_blocked: 'Cuidado!! Este quarto não pertence a você!!'
+      error_login: 'Email ou senha inválido(s)!!'
     notice:
       signed_in: 'Login efetuado com sucesso!'
       signed_out: 'Logout efetuado com sucesso!'

@@ -1,7 +1,7 @@
 <% provide(:title, "#{room.title} - #{room.user.full_name} #{room.location} ") %>
 
 <article class="room">
-  <h2><%= link_to room.title, room.route %> </h2>
+  <h2><%= link_to highlight(room.title, @search_query), room.route %> </h2>
 
   <%= render partial: "rooms/review", locals: {room: room} %>
 
@@ -13,12 +13,12 @@
   </span>
   <p>
     <span class="location">
-      <%= link_to "#{room.location} - #{room.state}",
+      <%= link_to highlight("#{room.location} - #{room.state}", @search_query),
                   "https://maps.google.com/?q=#{room.location} #{room.state}", target: '_blank' %>
     </span>
   </p>
 
-  <p><%= room.description %></p>
+  <p><%= highlight(room.description, @search_query) %></p>
   <% if belongs_to_user(room) %>
   
     <ul class="nav-opts">

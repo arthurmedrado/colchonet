@@ -1,0 +1,15 @@
+<section class="bloco-busca">
+	<h1 class="title">Busca Simples</h1>
+	<p class="muted block-code"><%= fa_icon('times-circle') %> Faça a busca pelo seu quarto favorito, poderá usar como buscar Localização, Titulo, Descrição e Estado onde o Quarto se encontra.</p>
+
+	<%= form_tag rooms_path, method: :get do %>
+		<%= text_field_tag :q, @search_query, class: 'search',
+					placeholder: t('.search_for') %>
+
+		<%= submit_tag '' ,name:'', value: 'Procurar', class: 'btn btn-block btn-success' %>
+	<% end %>
+
+	<!-- Fecha o form busca -->
+	<a href="javascript:void(0)" class="fechar-busca btn btn-small">Fechar busca</a>
+</section>
+<br>

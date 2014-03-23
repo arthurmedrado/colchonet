@@ -314,3 +314,36 @@ form{
 		@extend .padded_flash;
 	}
 }
+
+.muted{ color: $muted-color;}
+
+.block-code{
+	padding: 10px;
+	display:block;
+	@include border(3px);
+	background: #efefef;
+	border: 1px solid #eed;
+}
+
+.bloco-busca{
+	position: relative;
+
+	.search{
+		width: 99% !important;
+		position: relative;
+		z-index: 1;
+	}
+
+	&:after {
+		font-size: 25px;
+		font-family: "FontAwesome";
+		content: "\f002";
+		padding: 5px;
+		position: absolute;
+		color: #bbb;
+		bottom: 36.3%;
+		right: 10px;
+		z-index:5;
+	}
+
+}

@@ -1,9 +1,46 @@
 <% provide(:title, t('.title', user_name: @user.full_name)) %>
+
 <h1 class="title"><%= t '.title', user_name: @user.full_name %></h1>
 
-<ul>
-	<li><%= t '.location', location: @user.location %></li>
-	<li><%= t '.bio', bio: @user.bio %></li>
-</ul>
+<%= form_for @user do |f| %>
+	<p>
+		<%= f.label :full_name %>
+		<%= f.text_field :full_name, value: @user.full_name  %>
+		<%= error_tag @user, :full_name %>
+	</p>
 
-<%= link_to t('.edit'), edit_user_path(@user) %>
+	<p>
+		<%= f.label :location %>
+		<%= f.text_field :location %>
+		<%= error_tag @user, :location %>
+	</p>
+		
+	<p>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+		<%= error_tag @user, :email %>
+	</p>
+
+	<p>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+		<%= error_tag @user, :password %>
+	</p>
+
+	<p>
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation %>
+		<%= error_tag @user, :password_confirmation %>
+	</p>
+	
+	<p>
+		<%= f.label :bio %>
+		<%= f.text_area :bio , :rows => 10, :cols => 30 %>
+		<%= error_tag @user, :bio %>
+	</p>
+
+	<p>
+		<%= f.submit class: 'btn btn-success btn-block' %>
+	</p>
+
+<% end  %>
