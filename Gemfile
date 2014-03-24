@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.4'
 gem 'jquery-rails'
 
 gem 'sqlite3'
@@ -16,6 +16,11 @@ gem 'turbolinks'
 gem 'therubyracer', platforms: :ruby
 
 gem 'bcrypt-ruby', '~> 3.1.2'
+
+gem 'friendly_id'
+gem 'kaminari'
+gem 'carrierwave'
+gem 'rmagick'
 
 group :production do	
 	gem 'pg'
