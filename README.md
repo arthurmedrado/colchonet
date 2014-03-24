@@ -20,8 +20,9 @@ Atualmente as funcionalidades existentes incluem:
 	4. Requerimento de autenticação em algumas paginas.
 	5. RESTFull
 	6. Internacionalizado com I18n-rails
-    	7. Avaliação de Quartos
-    	8. Trabalhar com Helper fa_icon() para o Font-Awesome
+	7. Avaliação de Quartos
+	8. Trabalhar com Helper fa_icon() para o Font-Awesome
+	9. Sistema de busca simples com highlight no texto
 	`* E outras 'coisitas mas'...`
 
 Capa do Livro (Casa do Código)
