@@ -22,6 +22,11 @@ gem 'kaminari'
 gem 'carrierwave'
 gem 'rmagick'
 
+group :development do
+	gem 'capistrano'
+end
+
 group :production do	
 	gem 'pg'
+	gem 'unicorn'
 end
