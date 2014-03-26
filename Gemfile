@@ -24,9 +24,10 @@ gem 'rmagick'
 
 group :development do
 	gem 'capistrano'
+    gem 'rvm-capistrano'
 end
 
-group :production do	
+group :production do
 	gem 'pg'
 	gem 'unicorn'
 end
