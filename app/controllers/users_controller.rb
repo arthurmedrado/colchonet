@@ -54,13 +54,13 @@ class UsersController < ApplicationController
 	private
 
 	def set_user
-		@user ||= User.find(params[:id])
+		@user ||= User.friendly.find(params[:id])
 	end
 
 	def user_params
 		params.
 			require(:user).
-			permit(:email, :location, :full_name, :password, :password_confirmation, :bio)
+			permit(:email, :location, :full_name, :password, :password_confirmation, :bio, :slug)
 	end
 
 	def can_change

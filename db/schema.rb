@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326005253) do
+ActiveRecord::Schema.define(version: 20140326142020) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -61,8 +61,10 @@ ActiveRecord::Schema.define(version: 20140326005253) do
     t.string   "password_digest"
     t.datetime "confirmed_at"
     t.string   "confirmation_token"
+    t.string   "slug"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["slug"], name: "index_users_on_slug"
 
 end

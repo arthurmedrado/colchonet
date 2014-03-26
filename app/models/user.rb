@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	extend FriendlyId
+
 	# relacionamento um-para-muitos com a tabela quartos(rooms)
 	has_many :rooms, dependent: :destroy
 	has_many :reviews, dependent: :destroy
@@ -16,6 +18,9 @@ class User < ActiveRecord::Base
 	validates_format_of :email, :with => EMAIL_REGEX
 	validates_uniqueness_of :email
 
+	#validar os slugs
+	friendly_id :full_name, use: [:slugged, :history]
+
 	#valicação e encripitação bcrypt
 	#cria dois campos virtuais password & password_confirmation
 	has_secure_password
@@ -23,6 +28,10 @@ class User < ActiveRecord::Base
 	# geração do campo user#confirmation_token
 	before_create do |user|
 		user.confirmation_token = SecureRandom.urlsafe_base64
+	end
+
+	before_update do |user|
+		user.slug = user.full_name.parameterize
 	end
 
 	# verifica se o campo user#confirmed está preenchido,
