@@ -21,7 +21,7 @@ class RoomsController < ApplicationController
   end
 
   def show
-    room_model = Room.find(params[:id])
+    room_model = Room.friendly.find(params[:id])
     @room = RoomPresenter.new(room_model, self)
   end
 
@@ -67,7 +67,7 @@ class RoomsController < ApplicationController
 
   private
     def set_room
-        @room = current_user.rooms.find(params[:id])
+        @room = current_user.rooms.friendly.find(params[:id])
     end
 
     def room_params
