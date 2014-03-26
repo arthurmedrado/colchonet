@@ -15,6 +15,12 @@ class Room < ActiveRecord::Base
 	#validar os slugs
 	friendly_id :title, use: [:slugged, :history]
 
+	# antes de atualizar o room, 
+	# modifique o slug para que fique igual o title
+	before_update do |room|
+		room.slug = room.title.parameterize
+	end
+
 	def complete_name
 		"#{title}, #{location}"		
 	end

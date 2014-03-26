@@ -14,16 +14,25 @@
     <%= f.text_field :title %>
     <%= error_tag @room, :title %>
   </div>
+
+  <div class="field">
+    <%= f.label :slug %>
+    <%= f.text_field :slug, disabled: 'disabled' %>
+    <%= error_tag @room, :slug %>
+  </div>
+
   <div class="field">
     <%= f.label :state %>
     <%= f.text_field :state %>
     <%= error_tag @room, :state %>
   </div>
+  
   <div class="field">
     <%= f.label :location %>
     <%= f.text_field :location %>
     <%= error_tag @room, :location %>
   </div>
+  
   <div class="field">
     <%= f.label :description %>
     <%= f.text_area :description %>
