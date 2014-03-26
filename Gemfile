@@ -23,11 +23,11 @@ gem 'carrierwave'
 gem 'rmagick'
 
 group :development do
-	gem 'capistrano'
-    gem 'rvm-capistrano'
+  gem 'capistrano'
+  gem 'rvm-capistrano'
 end
 
 group :production do
-	gem 'pg'
-	gem 'unicorn'
+  gem 'pg'
+  gem 'unicorn'
 end
