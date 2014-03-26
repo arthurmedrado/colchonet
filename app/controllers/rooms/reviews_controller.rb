@@ -16,7 +16,7 @@ class Rooms::ReviewsController < ApplicationController
 	private
 
 	def room
-		@room ||= Room.find(params[:room_id])
+		@room ||= Room.friendly.find(params[:room_id])
 	end
 
 	def review_params
