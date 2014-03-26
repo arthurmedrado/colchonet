@@ -23,6 +23,7 @@ Atualmente as funcionalidades existentes incluem:
 	7. Avaliação de Quartos
 	8. Trabalhar com Helper fa_icon() para o Font-Awesome
 	9. Sistema de busca simples com highlight no texto
+    10. URL Amigaveis nos Quartos e Usuarios com Friendly_id
 	`* E outras 'coisitas mas'...`
 
 Capa do Livro (Casa do Código)
